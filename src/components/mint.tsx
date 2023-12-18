@@ -102,7 +102,7 @@ export function Mint() {
           alt="nextui logo"
           height={48}
           radius="sm"
-          src="https://docs.injective.network/img/injective.svg"
+          src="https://pbs.twimg.com/profile_images/1736296325224996864/DssBq6FR_400x400.jpg"
           width={48}
         />
         <Image
