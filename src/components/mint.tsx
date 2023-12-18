@@ -105,15 +105,6 @@ export function Mint() {
           src="https://pbs.twimg.com/profile_images/1736296325224996864/DssBq6FR_400x400.jpg"
           width={48}
         />
-        <Image
-          alt="test"
-          width={50}
-          height={50}
-          placeholder="blur"
-          src={testImage.src}
-          loading="lazy"
-          blurDataURL={testImage.blurDataURL}
-        />
         <div className="flex flex-col">
           <p className="text-md">INJ mint</p>
           <p className="text-small text-default-500">Alpha Hunter</p>
