@@ -15,6 +15,7 @@ type FormValues = {
   privateKey: string;
   dstInjectiveAddress: string;
   hexData: string;
+  amount:number;
 };
 
 const resolver: Resolver<FormValues> = async (values) => {
@@ -57,15 +58,16 @@ export function Mint() {
     address,
     dstInjectiveAddress,
     hexData,
+    amount
   }: FormValues) => {
     setStart(() => true);
-    const amount = {
+    const input_amount = {
       denom: "inj",
-      amount: new BigNumberInBase(0.0015).toWei().toFixed(),
+      amount: new BigNumberInBase(amount).toWei().toFixed(),
     };
 
     const msg = MsgSend.fromJSON({
-      amount,
+      amount:input_amount,
       srcInjectiveAddress: address,
       dstInjectiveAddress: dstInjectiveAddress,
     });
@@ -126,6 +128,12 @@ export function Mint() {
             size="lg"
             variant="faded"
             {...register("privateKey")}
+          />
+          <Input
+            label="转账金额"
+            size="lg"
+            variant="faded"
+            {...register("amount")}
           />
           <Input
             label="接收地址"
